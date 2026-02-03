@@ -27,21 +27,21 @@ jobs:
             packageType: tar
             targetName: bun-linux-x64
             outputName: flatr
-          - os: ubuntu-24.04-arm64
+          - os: ubuntu-24.04-arm
             platform: linux
             architecture: arm64
             archiveName: flatr-linux-arm64.tar.gz
             packageType: tar
             targetName: bun-linux-arm64
             outputName: flatr
-          - os: macos-14
+          - os: macos-13
             platform: macos
             architecture: x64
             archiveName: flatr-macos-x64.tar.gz
             packageType: tar
             targetName: bun-darwin-x64
             outputName: flatr
-          - os: macos-14
+          - os: macos-latest
             platform: macos
             architecture: arm64
             archiveName: flatr-macos-arm64.tar.gz
@@ -54,13 +54,6 @@ jobs:
             archiveName: flatr-windows-x64.zip
             packageType: zip
             targetName: bun-windows-x64
-            outputName: flatr.exe
-          - os: ubuntu-latest
-            platform: windows
-            architecture: arm64
-            archiveName: flatr-windows-arm64.zip
-            packageType: zip
-            targetName: bun-windows-arm64
             outputName: flatr.exe
     steps:
       - name: Checkout

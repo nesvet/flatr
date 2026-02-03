@@ -13,10 +13,16 @@ if (-not $installDirectory) {
 
 $architecture = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString().ToLowerInvariant()
 switch ($architecture) {
-	"x64" { $asset = "flatr-windows-x64.zip" }
-	"arm64" { $asset = "flatr-windows-arm64.zip" }
+	"x64" {
+		$asset = "flatr-windows-x64.zip"
+	}
+	"arm64" {
+		Write-Output "Note: Installing x64 build on ARM64 Windows (will run via emulation)"
+		$asset = "flatr-windows-x64.zip"
+	}
 	default {
 		Write-Output "Unsupported architecture: $architecture"
+		Write-Output "Only x64 builds are available for Windows."
 		exit 1
 	}
 }
