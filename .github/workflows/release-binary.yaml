@@ -72,6 +72,9 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Generate version file
+        run: bun run generate:version
+
       - name: Build binary
         run: bun build --compile --minify --sourcemap ./src/cli/main.ts --outfile "${{ matrix.outputName }}" --target ${{ matrix.targetName }}
 
