@@ -1,0 +1,78 @@
+{
+	"name": "fln",
+	"version": "1.0.0",
+	"description": "Feed your entire codebase to any LLM in one shot. No attachment limits, no upload hassles.",
+	"keywords": [
+		"cli",
+		"filesystem",
+		"directory",
+		"snapshot",
+		"flatten",
+		"flat",
+		"codebase",
+		"llm",
+		"prompt",
+		"markdown",
+		"json"
+	],
+	"homepage": "https://github.com/nesvet/fln#readme",
+	"bugs": {
+		"url": "https://github.com/nesvet/fln/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nesvet/fln.git"
+	},
+	"funding": {
+		"type": "patreon",
+		"url": "https://www.patreon.com/nesvet"
+	},
+	"license": "MIT",
+	"author": "Eugene Nesvetaev <dev@nesvet.dev> (https://nesvet.dev/)",
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"bin": {
+		"fln": "./dist/cli/main.js"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prebuild": "bun run generate:version",
+		"build": "bun build --compile --minify --sourcemap ./src/cli/main.ts --outfile fln",
+		"prebuild:npm": "bun run generate:version",
+		"build:npm": "tsc -p tsconfig.build.json",
+		"clean": "rm -rf fln dist",
+		"dev": "bun run src/cli/main.ts",
+		"generate:version": "bun run generate-version.ts",
+		"install:system": "bun run build && echo 'Requesting sudo to move binary to /usr/local/bin...' && sudo mv ./fln /usr/local/bin/fln && echo 'Installed successfully. Run \"fln --help\" to test.'",
+		"install:user": "bun run build && mkdir -p \"$HOME/.local/bin\" && mv ./fln \"$HOME/.local/bin/fln\" && echo 'Installed successfully. Run \"fln --help\" to test.'",
+		"lint": "eslint .",
+		"prepublishOnly": "bun run generate:version && bun run build:npm",
+		"test": "bun test",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"ignore": "^7.0.5",
+		"picocolors": "^1.1.1"
+	},
+	"devDependencies": {
+		"@nesvet/eslint-config": "latest",
+		"@types/bun": "latest",
+		"@types/node": "latest",
+		"typescript": "latest"
+	},
+	"packageManager": "bun@1.3.9",
+	"engines": {
+		"bun": ">=1.0.0",
+		"node": ">=18.3.0"
+	}
+}
