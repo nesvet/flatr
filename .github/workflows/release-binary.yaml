@@ -34,7 +34,7 @@ jobs:
             packageType: tar
             targetName: bun-linux-arm64
             outputName: flatr
-          - os: macos-13
+          - os: macos-15-intel
             platform: macos
             architecture: x64
             archiveName: flatr-macos-x64.tar.gz
