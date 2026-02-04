@@ -1,10 +1,11 @@
 {
 	"name": "flatr",
 	"version": "1.0.0",
-	"description": "Feed your entire codebase to any LLM in one shot. No attachment limits, no upload hassles.",
+	"description": "Feed your entire codebase to any LLM in one shot. No attachment limits, no upload hassles. Not related to the \"flat\" npm package (object flattening).",
 	"keywords": [
 		"cli",
-		"flatten",
+		"filesystem",
+		"directory",
 		"snapshot",
 		"codebase",
 		"llm",

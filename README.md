@@ -1,5 +1,7 @@
 # 🥞 flatr
 
+> **Note:** This project is not related to the `flat` npm package.
+
 [![CI](https://github.com/nesvet/flatr/actions/workflows/ci.yaml/badge.svg)](https://github.com/nesvet/flatr/actions/workflows/ci.yaml)
 [![npm](https://img.shields.io/npm/v/flatr)](https://www.npmjs.com/package/flatr)
 [![license](https://img.shields.io/npm/l/flatr)](LICENSE)
