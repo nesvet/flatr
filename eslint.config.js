@@ -1,1 +1,7 @@
-export { bun as default } from "@nesvet/eslint-config";// eslint-disable-line import/no-default-export
+import { bun } from "@nesvet/eslint-config";
+
+
+export default [// eslint-disable-line import/no-default-export
+	{ ignores: [ "examples/**" ] },
+	...bun
+];
