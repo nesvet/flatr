@@ -18,5 +18,6 @@
 			"$infra": [ "./src/infra/index.ts" ],
 			"$version": [ "./src/version.ts" ]
 		}
-	}
+	},
+	"exclude": [ "examples" ]
 }
