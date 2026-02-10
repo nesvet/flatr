@@ -15,6 +15,7 @@ for (const name of names) {
 	await fln({
 		rootDirectory: join(examplesDir, name),
 		outputFile: join(examplesDir, `${name}.md`),
+		overwrite: true,
 		generatedDate: "2026-01-01 00:00"
 	});
 	
