@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-02-10
+
 ### Added
 
 - API option to overwrite existing output files
@@ -39,5 +41,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cross-platform shell installers with SHA256 verification (macOS, Linux, Windows)
 - Comprehensive test suite
 
-[Unreleased]: https://github.com/nesvet/fln/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/nesvet/fln/compare/1.1.1...HEAD
+[1.1.1]: https://github.com/nesvet/fln/compare/1.0.0...1.1.1
 [1.0.0]: https://github.com/nesvet/fln/releases/tag/1.0.0
