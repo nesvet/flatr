@@ -301,12 +301,11 @@ try {
 	$destinationPath = Join-Path $installDirectory "fln.exe"
 	Move-Item -LiteralPath $binaryPath -Destination $destinationPath -Force
 
-	$shortPath = $destinationPath.Replace($env:USERPROFILE, "~")
 	if ($env:FLN_SILENT -eq "1") {
-		Write-Output "🥞 fln $displayVersion was installed successfully to $shortPath"
+		Write-Output "🥞 fln $displayVersion was installed successfully to $destinationPath"
 		Write-Output "Run 'fln --help' to get started"
 	} else {
-		Write-Host "${ansiGreen}🥞 ${ansiGreenBold}fln${ansiReset}${ansiGreen} $displayVersion was installed successfully to ${ansiBold}$shortPath${ansiReset}"
+		Write-Host "${ansiGreen}🥞 ${ansiGreenBold}fln${ansiReset}${ansiGreen} $displayVersion was installed successfully to ${ansiBold}$destinationPath${ansiReset}"
 		Write-Host "Run 'fln --help' to get started"
 	}
 	

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Show full install path in Windows install script (instead of `~` shorthand)
+
 ### Fixed
 
 - Native Windows ARM64 build support (release workflow and install script)
