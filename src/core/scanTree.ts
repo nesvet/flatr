@@ -10,7 +10,7 @@ import { cpus } from "node:os";
 import { relative, sep } from "node:path";
 import type { Dirent } from "node:fs";
 import ignore from "ignore";
-import type { Logger } from "$infra";
+import type { Logger } from "../infra";
 import { IgnoreMatcher } from "./ignoreMatcher";
 import type {
 	FileNode,
@@ -177,8 +177,9 @@ export async function scanTree(options: ScanOptions, logger: Logger): Promise<Sc
 			return undefined;
 		
 		const isExplicitlyIncluded = normalizedRelativePath !== "" && includeMatcher.ignores(normalizedRelativePath);
+		const pathForIgnoreCheck = normalizedRelativePath === "" ? "" : (dirent?.isDirectory() ? `${normalizedRelativePath}/` : normalizedRelativePath);
 		
-		if (!isExplicitlyIncluded && normalizedRelativePath !== "" && ignoreMatcher.ignores(normalizedRelativePath))
+		if (!isExplicitlyIncluded && pathForIgnoreCheck !== "" && ignoreMatcher.ignores(pathForIgnoreCheck))
 			return undefined;
 		
 		if (!options.includeHidden && name.startsWith(".") && name !== ".")

@@ -5,7 +5,7 @@ type TerminalInfo = {
 
 export function getTerminalInfo(): TerminalInfo {
 	const width = process.stdout.columns || 80;
-	const supportsAnsi = process.stdout.isTTY && process.env.TERM !== "dumb";
+	const supportsAnsi = process.stdout.isTTY && !process.env.NO_COLOR && process.env.TERM !== "dumb";
 	
 	return { width, supportsAnsi };
 }
@@ -15,7 +15,7 @@ export function isTTY(): boolean {
 }
 
 export function shouldUseColors(): boolean {
-	return isTTY() && process.env.NO_COLOR !== "1" && process.env.TERM !== "dumb";
+	return isTTY() && !process.env.NO_COLOR && process.env.TERM !== "dumb";
 }
 
 export const ansi = {

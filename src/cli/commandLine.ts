@@ -1,19 +1,19 @@
 import { resolve } from "node:path";
 import { parseArgs } from "node:util";
-import { fln } from "$api";
+import { fln } from "../api";
 import {
 	collectExtensionStats,
 	collectProcessedFiles,
 	parseByteSize,
 	type FileNode
-} from "$core";
+} from "../core";
 import {
 	getTerminalInfo,
 	incrementUsageCount,
 	shouldShowSponsorMessage,
 	shouldUseColors
-} from "$infra";
-import { VERSION } from "$version";
+} from "../infra";
+import { VERSION } from "../version";
 import { formatHelpMessage } from "./help";
 import { OutputRenderer } from "./output";
 

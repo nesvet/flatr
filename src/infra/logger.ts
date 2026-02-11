@@ -1,4 +1,4 @@
-import type { LogLevel } from "$core";
+import type { LogLevel } from "../core";
 import {
 	ansi,
 	getTerminalInfo,
