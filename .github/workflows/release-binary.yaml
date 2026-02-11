@@ -69,7 +69,7 @@ jobs:
         run: bun run generate:version
 
       - name: Build binary
-        run: bun build --compile --minify --sourcemap ./src/cli/main.ts --outfile "${{ matrix.outputName }}" --target ${{ matrix.targetName }}
+        run: bun build --compile --minify --sourcemap ./src/cli/index.ts --outfile "${{ matrix.outputName }}" --target ${{ matrix.targetName }}
 
       - name: Package binary
         id: package
