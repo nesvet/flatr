@@ -177,8 +177,9 @@ export async function scanTree(options: ScanOptions, logger: Logger): Promise<Sc
 			return undefined;
 		
 		const isExplicitlyIncluded = normalizedRelativePath !== "" && includeMatcher.ignores(normalizedRelativePath);
+		const pathForIgnoreCheck = normalizedRelativePath === "" ? "" : (dirent?.isDirectory() ? `${normalizedRelativePath}/` : normalizedRelativePath);
 		
-		if (!isExplicitlyIncluded && normalizedRelativePath !== "" && ignoreMatcher.ignores(normalizedRelativePath))
+		if (!isExplicitlyIncluded && pathForIgnoreCheck !== "" && ignoreMatcher.ignores(pathForIgnoreCheck))
 			return undefined;
 		
 		if (!options.includeHidden && name.startsWith(".") && name !== ".")
