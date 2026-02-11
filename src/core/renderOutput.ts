@@ -1,9 +1,9 @@
 import { createReadStream } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { extname, join } from "node:path";
-import { createOutputWriter, formatDateTime } from "$infra";
-import { VERSION } from "$version";
-import type { FlnConfig } from "$config";
+import { createOutputWriter, formatDateTime } from "../infra";
+import { VERSION } from "../version";
+import type { FlnConfig } from "../config";
 import { renderTree } from "./renderTree";
 import { formatByteSize } from "./size";
 import type { FileNode, ScanResult } from "./types";

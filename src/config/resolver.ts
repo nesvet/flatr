@@ -1,5 +1,5 @@
-import { parseByteSize, type OutputFormat } from "$core";
-import { parseGeneratedDate } from "$infra";
+import { parseByteSize, type OutputFormat } from "../core";
+import { parseGeneratedDate } from "../infra";
 import { defaultMaximumFileSizeBytes } from "./defaults";
 import type { FlnConfig, RawConfigFile } from "./types";
 

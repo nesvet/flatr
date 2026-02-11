@@ -1,4 +1,4 @@
-import type { LogLevel, OutputFormat } from "$core";
+import type { LogLevel, OutputFormat } from "../core";
 
 
 export type RawConfigFile = Partial<{
