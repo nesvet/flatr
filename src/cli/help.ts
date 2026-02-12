@@ -7,7 +7,7 @@ export function formatHelpMessage(useAnsi: boolean): string {
 	const cyan = (text: string) => applyColor(text, colors.info, useAnsi);
 	const green = (text: string) => applyColor(text, colors.success, useAnsi);
 	
-	return `${bold("fln")} ${dim("—")} Flatten your codebase into a single file for LLMs.
+	return `🥞 ${bold("fln")} ${dim("—")} Flatten your codebase into a single file for LLMs.
 
 ${bold("Usage:")} fln ${cyan("[directory]")} ${dim("[...flags]")}
 
